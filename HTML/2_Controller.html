@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+    <title>My AngularJS - Controller</title>
+    <script type="text/javascript">
+    var app=angular.module("Sample",[]);
+    //controller
+    app.controller("emp",function(){
+        this.name="Jeyanthi";
+    });
+    //$scope2
+    app.controller("scope",function($scope){
+        $scope.name="World";
+    });
+    //$scope2
+    app.controller("scope",["$scope",function(s){
+        s.name="INR";
+        s.savings=100;
+        s.getAnualSavings=function(){
+            return s.savings*12;
+        }
+    }]);
+</script>
+</head>
+<body ng-app="Sample">
+    <div ng-controller="emp as o">
+        Hello {{o.name}}
+    </div>
+    <div ng-controller="scope">
+        Hello {{name}}
+        Your savings {{savings}}
+        Your Annual Savings {{getAnualSavings()}}
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <title>My AngularJS - HTTP</title>
+    <script type="text/javascript" src="../JS/6_Http.js"></script>
+    
+</head>
+<body ng-app="Sample">
+    <h2>HTTP</h2>
+    <div ng-controller="twoWay">
+        <div>The value of a is : <span ng-bind="a"></span></div>
+        But You can change to
+        <input type="text" ng-model="a"></input>
+        <div>The value of b is : <span ng-bind="b"></span></div>
+        But You can change to
+        <input type="text" ng-model="b"></input>
+        <hr>
+        <button ng-click="doSum()">Calaulate Sum</button>
+        <div>The value of a is : <span ng-bind="a"></span></div>
+        <div>The value of b is : <span ng-bind="b"></span></div>
+        <div>The value of Sum is : <span ng-bind="sum"></span></div>
+        <hr>
+    </div>
+   
+</body>
+</html>

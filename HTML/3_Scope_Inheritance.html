@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+    <title>My AngularJS - Controller</title>
+    <script type="text/javascript">
+    var app=angular.module("Sample",[]);
+    
+    app.controller("scope",function($scope){
+        $scope.name="Jey";
+    });
+    //$scope2
+    app.controller("scope_Inheritance",["$scope",function(s){
+        s.savings=100;
+        s.getAnualSavings=function(){
+            return s.savings*12;
+        }
+    }]);
+    app.controller("Inheritance",["$scope",function(s){
+        s.sal=500;
+        s.getNet=function(){
+            return  s.sal-s.savings;
+        }
+    }]);
+</script>
+</head>
+<body ng-app="Sample">
+    <div ng-controller="scope">
+        Hello {{name}}
+        <div ng-controller="scope_Inheritance">
+            Hello {{name}}
+            Your savings {{savings}}
+            Your Annual Savings {{getAnualSavings()}}
+            <div ng-controller="Inheritance">
+               {{name}} Net Salary {{getNet()}}
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
